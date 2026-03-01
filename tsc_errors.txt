@@ -1,0 +1,65 @@
+src/app/puck/blocks/shadcn-blocks.tsx(106,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & About3Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(145,25): error TS2739: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Banner1Props': title, description, linkText, linkUrl
+src/app/puck/blocks/shadcn-blocks.tsx(183,25): error TS2740: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Blog7Props': tagline, heading, description, buttonText, and 2 more.
+src/app/puck/blocks/shadcn-blocks.tsx(190,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & { post?: BlogPostData | undefined; }'.
+src/app/puck/blocks/shadcn-blocks.tsx(207,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Careers4Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(214,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(221,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(246,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Changelog1Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(253,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(260,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(267,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(274,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(339,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Contact7Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(346,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(367,25): error TS2739: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Cta10Props': heading, description
+src/app/puck/blocks/shadcn-blocks.tsx(400,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Cta11Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(421,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Download2Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(438,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Experience5Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(455,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Faq1Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(488,25): error TS2739: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Feature1Props': title, imageSrc, imageAlt, buttonPrimary, buttonSecondary
+src/app/puck/blocks/shadcn-blocks.tsx(510,25): error TS2741: Property 'features' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Feature13Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(563,25): error TS2740: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Feature166Props': title, description, feature1, feature2, and 2 more.
+src/app/puck/blocks/shadcn-blocks.tsx(597,25): error TS2741: Property 'features' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Feature17Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(615,25): error TS2741: Property 'features' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Feature197Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(648,25): error TS2739: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Feature2Props': title, imageSrc, imageAlt, buttonPrimary, buttonSecondary
+src/app/puck/blocks/shadcn-blocks.tsx(673,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Feature43Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(691,25): error TS2741: Property 'features' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Feature51Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(720,25): error TS2741: Property 'title' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Feature72Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(749,25): error TS2741: Property 'title' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Feature73Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(778,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Footer2Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(799,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Gallery6Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(828,25): error TS2739: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Hero1Props': heading, description, image
+src/app/puck/blocks/shadcn-blocks.tsx(865,25): error TS2739: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' is missing the following properties from type 'Hero115Props': heading, description, button
+src/app/puck/blocks/shadcn-blocks.tsx(890,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Hero3Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(919,25): error TS2741: Property 'heading' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Hero45Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(948,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Hero47Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(973,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Hero7Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(980,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(997,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & List2Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1030,25): error TS2741: Property 'logo' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Login1Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1051,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Logos8Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1072,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Navbar1Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1093,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Pricing2Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1118,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Pricing4Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1151,25): error TS2741: Property 'heading' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Pricing6Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1158,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(1165,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(1172,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(1205,25): error TS2741: Property 'logo' is missing in type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' but required in type 'Signup1Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1230,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Stats8Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1255,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Team1Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1272,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes & Testimonial10Props'.
+src/app/puck/blocks/shadcn-blocks.tsx(1279,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/app/puck/blocks/shadcn-blocks.tsx(1286,25): error TS2559: Type '{ puck: PuckContext; editMode?: boolean | undefined; id: string; }' has no properties in common with type 'IntrinsicAttributes'.
+src/components/blocks/blogpost1.tsx(4,53): error TS2307: Cannot find module '@/components/ui/alert' or its corresponding type declarations.
+src/components/blocks/codeexample1.tsx(6,38): error TS2307: Cannot find module '@/components/kibo-ui/code-block' or its corresponding type declarations.
+src/components/blocks/codeexample1.tsx(16,8): error TS2307: Cannot find module '@/components/kibo-ui/code-block' or its corresponding type declarations.
+src/components/blocks/codeexample1.tsx(18,39): error TS2307: Cannot find module '@/components/ui/scroll-area' or its corresponding type declarations.
+src/components/blocks/codeexample1.tsx(206,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/blocks/codeexample1.tsx(224,21): error TS7006: Parameter 'item' implicitly has an 'any' type.
+src/components/blocks/community1.tsx(1,49): error TS2307: Cannot find module 'react-icons/fa6' or its corresponding type declarations.
+src/components/blocks/compare7.tsx(10,8): error TS2307: Cannot find module '@/components/ui/table' or its corresponding type declarations.
+src/components/blocks/compare7.tsx(15,8): error TS2307: Cannot find module '@/components/ui/tooltip' or its corresponding type declarations.
+src/components/blocks/content1.tsx(14,53): error TS2307: Cannot find module '@/components/ui/alert' or its corresponding type declarations.
+src/components/blocks/footer2.tsx(1,43): error TS2307: Cannot find module '@/components/shadcnblocks/logo' or its corresponding type declarations.

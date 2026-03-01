@@ -47,6 +47,8 @@ import {
     ShadcnPagination, ShadcnCalendar,
 } from "./puck/blocks/misc-blocks";
 
+import { shadcnBlocksConfig } from "./puck/blocks/shadcn-blocks";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type Props = Record<string, any>;
 
@@ -116,6 +118,10 @@ export const puckConfig: Config = {
                 "ShadcnCollapsible", "ShadcnToggle", "ShadcnToggleGroup",
                 "ShadcnPagination", "ShadcnCalendar",
             ],
+        },
+        shadcnBlocks: {
+            title: "Shadcn Blocks",
+            components: Object.keys(shadcnBlocksConfig),
         },
     },
 
@@ -503,5 +509,8 @@ export const puckConfig: Config = {
         // ── Shadcn Misc ─────────────────────────────────────
         ShadcnCollapsible, ShadcnToggle, ShadcnToggleGroup,
         ShadcnPagination, ShadcnCalendar,
+
+        // ── Generated Shadcn Blocks ─────────────────────────
+        ...shadcnBlocksConfig,
     },
 };
