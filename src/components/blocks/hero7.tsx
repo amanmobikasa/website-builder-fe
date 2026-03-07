@@ -69,9 +69,9 @@ const Hero7 = ({
         </Button>
         <div className="mx-auto mt-10 flex w-fit flex-col items-center gap-4 sm:flex-row">
           <span className="mx-4 inline-flex items-center -space-x-4">
-            {reviews.avatars.map((avatar, index) => (
+            {Array.isArray(reviews?.avatars) && reviews.avatars.map((avatar, index) => (
               <Avatar key={index} className="size-14 border">
-                <AvatarImage src={avatar.src} alt={avatar.alt} />
+                <AvatarImage src={avatar?.src} alt={avatar?.alt} />
               </Avatar>
             ))}
           </span>

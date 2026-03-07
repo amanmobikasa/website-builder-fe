@@ -67,14 +67,14 @@ const Team1 = ({
         </p>
       </div>
       <div className="container mt-16 grid gap-x-8 gap-y-16 md:grid-cols-2 lg:grid-cols-3">
-        {members.map((member) => (
-          <div key={member.id} className="flex flex-col items-center">
+        {Array.isArray(members) && members.map((member) => (
+          <div key={member?.id} className="flex flex-col items-center">
             <Avatar className="mb-4 size-20 border md:mb-5 lg:size-24">
-              <AvatarImage src={member.avatar} />
-              <AvatarFallback>{member.name}</AvatarFallback>
+              <AvatarImage src={member?.avatar} />
+              <AvatarFallback>{member?.name}</AvatarFallback>
             </Avatar>
-            <p className="text-center font-medium">{member.name}</p>
-            <p className="text-muted-foreground text-center">{member.role}</p>
+            <p className="text-center font-medium">{member?.name}</p>
+            <p className="text-muted-foreground text-center">{member?.role}</p>
           </div>
         ))}
       </div>

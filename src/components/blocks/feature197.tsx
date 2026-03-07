@@ -60,7 +60,7 @@ const Feature197 = ({
   ],
 }: Feature197Props) => {
   const [activeTabId, setActiveTabId] = useState<number | null>(1);
-  const [activeImage, setActiveImage] = useState(features[0].image);
+  const [activeImage, setActiveImage] = useState(features?.[0]?.image || "");
 
   return (
     <section className="py-32">
@@ -68,7 +68,7 @@ const Feature197 = ({
         <div className="mb-12 flex w-full items-start justify-between gap-12">
           <div className="w-full md:w-1/2">
             <Accordion type="single" className="w-full" defaultValue="item-1">
-              {features.map((tab) => (
+              {Array.isArray(features) && features.map((tab) => (
                 <AccordionItem
                   key={tab.id}
                   value={`item-${tab.id}`}

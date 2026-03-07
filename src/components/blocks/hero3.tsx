@@ -78,9 +78,9 @@ const Hero3 = ({
           </p>
           <div className="mb-12 flex w-fit flex-col items-center gap-4 sm:flex-row">
             <span className="inline-flex items-center -space-x-4">
-              {reviews.avatars.map((avatar, index) => (
+              {Array.isArray(reviews?.avatars) && reviews.avatars.map((avatar, index) => (
                 <Avatar key={index} className="size-12 border">
-                  <AvatarImage src={avatar.src} alt={avatar.alt} />
+                  <AvatarImage src={avatar?.src} alt={avatar?.alt || "Reviewer Avatar"} />
                 </Avatar>
               ))}
             </span>
@@ -93,24 +93,24 @@ const Hero3 = ({
                   />
                 ))}
                 <span className="mr-1 font-semibold">
-                  {reviews.rating?.toFixed(1)}
+                  {reviews?.rating?.toFixed(1) || "5.0"}
                 </span>
               </div>
               <p className="text-muted-foreground text-left font-medium">
-                from {reviews.count}+ reviews
+                from {reviews?.count || "200"}+ reviews
               </p>
             </div>
           </div>
           <div className="flex w-full flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-            {buttons.primary && (
+            {buttons?.primary && (
               <Button asChild className="w-full sm:w-auto">
-                <a href={buttons.primary.url}>{buttons.primary.text}</a>
+                <a href={buttons.primary.url || "#"}>{buttons.primary.text || "Sign Up"}</a>
               </Button>
             )}
-            {buttons.secondary && (
+            {buttons?.secondary && (
               <Button asChild variant="outline">
-                <a href={buttons.secondary.url}>
-                  {buttons.secondary.text}
+                <a href={buttons.secondary.url || "#"}>
+                  {buttons.secondary.text || "Get Started"}
                   <ArrowDownRight className="size-4" />
                 </a>
               </Button>

@@ -95,21 +95,21 @@ const Pricing2 = ({
             Yearly
           </div>
           <div className="flex flex-col items-stretch gap-6 md:flex-row">
-            {plans.map((plan) => (
+            {Array.isArray(plans) && plans.map((plan) => (
               <Card
-                key={plan.id}
+                key={plan?.id}
                 className="flex w-80 flex-col justify-between text-left"
               >
                 <CardHeader>
                   <CardTitle>
-                    <p>{plan.name}</p>
+                    <p>{plan?.name}</p>
                   </CardTitle>
                   <p className="text-muted-foreground text-sm">
-                    {plan.description}
+                    {plan?.description}
                   </p>
                   <div className="flex items-end">
                     <span className="text-4xl font-semibold">
-                      {isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+                      {isYearly ? plan?.yearlyPrice : plan?.monthlyPrice}
                     </span>
                     <span className="text-muted-foreground text-2xl font-semibold">
                       {isYearly ? "/yr" : "/mo"}
@@ -118,27 +118,27 @@ const Pricing2 = ({
                 </CardHeader>
                 <CardContent>
                   <Separator className="mb-6" />
-                  {plan.id === "pro" && (
+                  {plan?.id === "pro" && (
                     <p className="mb-3 font-semibold">
                       Everything in Plus, and:
                     </p>
                   )}
                   <ul className="space-y-4">
-                    {plan.features.map((feature, index) => (
+                    {Array.isArray(plan?.features) && plan.features.map((feature, index) => (
                       <li
                         key={index}
                         className="flex items-center gap-2 text-sm"
                       >
                         <CircleCheck className="size-4" />
-                        <span>{feature.text}</span>
+                        <span>{feature?.text}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
                 <CardFooter className="mt-auto">
                   <Button asChild className="w-full">
-                    <a href={plan.button.url} target="_blank">
-                      {plan.button.text}
+                    <a href={plan?.button?.url} target="_blank">
+                      {plan?.button?.text}
                     </a>
                   </Button>
                 </CardFooter>

@@ -65,6 +65,7 @@ const initialData: Data = {
 };
 
 export default function Editor() {
+  const [mounted, setMounted] = useState(false);
   const [openCombobox, setOpenCombobox] = useState(false);
   const [pages, setPages] = useState<PageState[]>([
     { id: "index", title: "Home", route: "/", data: initialData },
@@ -77,12 +78,44 @@ export default function Editor() {
   const [customCSS, setCustomCSS] = useState("");
   const [showCSSModal, setShowCSSModal] = useState(false);
 
+  // Load from localStorage on mount
+  useEffect(() => {
+    try {
+      const savedPages = localStorage.getItem("puck-builder-pages");
+      if (savedPages) setPages(JSON.parse(savedPages));
+
+      const savedActivePage = localStorage.getItem("puck-builder-active-page");
+      if (savedActivePage) setActivePageIndex(parseInt(savedActivePage, 10) || 0);
+
+      const savedName = localStorage.getItem("puck-builder-project-name");
+      if (savedName) setProjectName(savedName);
+
+      const savedTheme = localStorage.getItem("puck-builder-theme-id");
+      if (savedTheme) setSelectedThemeId(savedTheme);
+
+      const savedCSS = localStorage.getItem("puck-builder-custom-css");
+      if (savedCSS) setCustomCSS(savedCSS);
+    } catch (e) { }
+    setMounted(true);
+  }, []);
+
+  // Save to localStorage on change
+  useEffect(() => {
+    if (!mounted) return;
+    localStorage.setItem("puck-builder-pages", JSON.stringify(pages));
+    localStorage.setItem("puck-builder-active-page", activePageIndex.toString());
+    localStorage.setItem("puck-builder-project-name", projectName);
+    localStorage.setItem("puck-builder-theme-id", selectedThemeId);
+    localStorage.setItem("puck-builder-custom-css", customCSS);
+  }, [pages, activePageIndex, projectName, selectedThemeId, customCSS, mounted]);
+
   const { theme, setTheme, resolved } = useTheme();
 
-  const activePage = pages[activePageIndex];
+  const activePage = pages[activePageIndex] || pages[0];
 
   // Theme CSS Variables (for sidebar; Puck has its own styling)
   const isDark = resolved === "dark";
+
   const colors = {
     sidebarBg: isDark ? "#1a1a1a" : "#fafafa",
     sidebarBorder: isDark ? "#333" : "#e5e5e5",
@@ -146,18 +179,21 @@ export default function Editor() {
 
   const handleEditorChange = useCallback((data: PuckData) => {
     latestDataRef.current = data;
+    try {
+      localStorage.setItem("puck-preview-data", JSON.stringify(data));
+    } catch (err) { }
   }, []);
 
   const handlePreview = useCallback(() => {
     const latestData = latestDataRef.current;
     try {
-      sessionStorage.setItem("puck-preview-data", JSON.stringify(latestData));
-      sessionStorage.setItem("puck-preview-title", activePage.title);
+      localStorage.setItem("puck-preview-data", JSON.stringify(latestData));
+      localStorage.setItem("puck-preview-title", activePage.title);
       // Pass selected theme CSS to preview
       const activeThemeCSS = selectedThemeId === "custom"
         ? customCSS
         : presetThemes.find((t) => t.id === selectedThemeId)?.cssText ?? "";
-      sessionStorage.setItem("puck-preview-theme", activeThemeCSS);
+      localStorage.setItem("puck-preview-theme", activeThemeCSS);
     } catch (err) {
       console.error("Failed to store preview data:", err);
     }
@@ -256,6 +292,14 @@ export default function Editor() {
     color: colors.textMuted,
     transition: "color 150ms, background 150ms",
   };
+
+  if (!mounted) {
+    return (
+      <div style={{ display: "flex", height: "100vh", alignItems: "center", justifyContent: "center", background: "#fafafa" }}>
+        Loading Editor...
+      </div>
+    );
+  }
 
   return (
     <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>

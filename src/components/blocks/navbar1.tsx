@@ -155,17 +155,17 @@ const Navbar1 = ({
             <div className="flex items-center">
               <NavigationMenu>
                 <NavigationMenuList>
-                  {menu.map((item) => renderMenuItem(item))}
+                  {Array.isArray(menu) && menu.map((item) => renderMenuItem(item))}
                 </NavigationMenuList>
               </NavigationMenu>
             </div>
           </div>
           <div className="flex gap-2">
             <Button asChild variant="outline" size="sm">
-              <a href={auth.login.url}>{auth.login.title}</a>
+              <a href={auth?.login?.url || "#"}>{auth?.login?.title || "Login"}</a>
             </Button>
             <Button asChild size="sm">
-              <a href={auth.signup.url}>{auth.signup.title}</a>
+              <a href={auth?.signup?.url || "#"}>{auth?.signup?.title || "Sign up"}</a>
             </Button>
           </div>
         </nav>
@@ -205,15 +205,15 @@ const Navbar1 = ({
                     collapsible
                     className="flex w-full flex-col gap-4"
                   >
-                    {menu.map((item) => renderMobileMenuItem(item))}
+                    {Array.isArray(menu) && menu.map((item) => renderMobileMenuItem(item))}
                   </Accordion>
 
                   <div className="flex flex-col gap-3">
                     <Button asChild variant="outline">
-                      <a href={auth.login.url}>{auth.login.title}</a>
+                      <a href={auth?.login?.url || "#"}>{auth?.login?.title || "Login"}</a>
                     </Button>
                     <Button asChild>
-                      <a href={auth.signup.url}>{auth.signup.title}</a>
+                      <a href={auth?.signup?.url || "#"}>{auth?.signup?.title || "Sign up"}</a>
                     </Button>
                   </div>
                 </div>

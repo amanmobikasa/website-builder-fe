@@ -52,22 +52,27 @@ const Feature51 = ({
     },
   ],
 }: Feature51Props) => {
+  const safeFeatures = Array.isArray(features) ? features : [];
   const defaultTab =
-    features.find((tab) => tab.isDefault)?.id || features[0].id;
+    safeFeatures.find((tab) => tab?.isDefault)?.id || safeFeatures[0]?.id || "feature-1";
+
+  if (safeFeatures.length === 0) {
+    return <section className="py-32"><div className="container text-center text-muted-foreground">No features added yet.</div></section>;
+  }
 
   return (
     <section className="py-32">
       <div className="container">
         <Tabs defaultValue={defaultTab} className="p-0">
           <TabsList className="bg-background flex h-auto w-full flex-col gap-2 p-0 md:flex-row">
-            {features.map((tab) => {
+            {safeFeatures.map((tab) => {
+              if (!tab) return null;
               return (
                 <TabsTrigger
-                  key={tab.id}
-                  value={tab.id}
-                  className={`hover:border-muted data-[state=active]:bg-muted group flex w-full flex-col items-start justify-start gap-1 whitespace-normal rounded-md border p-4 text-left shadow-none transition-opacity duration-200 hover:opacity-80 data-[state=active]:shadow-none ${
-                    tab.isDefault ? "" : ""
-                  }`}
+                  key={tab.id || Math.random().toString()}
+                  value={tab.id || "default"}
+                  className={`hover:border-muted data-[state=active]:bg-muted group flex w-full flex-col items-start justify-start gap-1 whitespace-normal rounded-md border p-4 text-left shadow-none transition-opacity duration-200 hover:opacity-80 data-[state=active]:shadow-none ${tab.isDefault ? "" : ""
+                    }`}
                 >
                   <div className="flex items-center gap-2 md:flex-col md:items-start lg:gap-4">
                     {tab.icon && (
@@ -86,19 +91,22 @@ const Feature51 = ({
               );
             })}
           </TabsList>
-          {features.map((tab) => (
-            <TabsContent
-              key={tab.id}
-              value={tab.id}
-              className="transition-opacity duration-300"
-            >
-              <img
-                src={tab.image}
-                alt={tab.heading}
-                className="aspect-video w-full rounded-md object-cover transition-opacity duration-300"
-              />
-            </TabsContent>
-          ))}
+          {safeFeatures.map((tab) => {
+            if (!tab) return null;
+            return (
+              <TabsContent
+                key={tab.id || Math.random().toString()}
+                value={tab.id || "default"}
+                className="transition-opacity duration-300"
+              >
+                <img
+                  src={tab.image}
+                  alt={tab.heading}
+                  className="aspect-video w-full rounded-md object-cover transition-opacity duration-300"
+                />
+              </TabsContent>
+            )
+          })}
         </Tabs>
       </div>
     </section>

@@ -45,10 +45,10 @@ const Pricing6 = ({
               </span>
             </div>
             <div className="my-6">
-              {features.map((featureGroup, idx) => (
+              {Array.isArray(features) && features.map((featureGroup, idx) => (
                 <div key={idx}>
                   <ul className="flex flex-col gap-3">
-                    {featureGroup.map((feature, i) => (
+                    {Array.isArray(featureGroup) && featureGroup.map((feature, i) => (
                       <li
                         key={i}
                         className="flex items-center justify-between gap-2 text-sm font-medium"

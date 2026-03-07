@@ -27,7 +27,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body style={{ margin: 0, fontFamily: "'Inter', sans-serif" }}>
+      <body suppressHydrationWarning style={{ margin: 0, fontFamily: "'Inter', sans-serif" }}>
         <ThemeProvider>
           <TooltipProvider>
             {children}

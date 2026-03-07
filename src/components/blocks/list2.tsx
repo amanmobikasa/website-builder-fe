@@ -80,27 +80,27 @@ const List2 = ({
         </h1>
         <div className="flex flex-col">
           <Separator />
-          {items.map((item, index) => (
+          {Array.isArray(items) && items.map((item, index) => (
             <React.Fragment key={index}>
               <div className="grid items-center gap-4 px-4 py-5 md:grid-cols-4">
                 <div className="order-2 flex items-center gap-2 md:order-none">
                   <span className="bg-muted flex h-14 w-16 shrink-0 items-center justify-center rounded-md">
-                    {item.icon}
+                    {item?.icon}
                   </span>
                   <div className="flex flex-col gap-1">
-                    <h3 className="font-semibold">{item.title}</h3>
+                    <h3 className="font-semibold">{item?.title}</h3>
                     <p className="text-muted-foreground text-sm">
-                      {item.category}
+                      {item?.category}
                     </p>
                   </div>
                 </div>
                 <p className="order-1 text-2xl font-semibold md:order-none md:col-span-2">
-                  {item.description}
+                  {item?.description}
                 </p>
                 <Button variant="outline" asChild>
                   <a
                     className="order-3 ml-auto w-fit gap-2 md:order-none"
-                    href={item.link}
+                    href={item?.link}
                   >
                     <span>View project</span>
                     <ArrowRight className="h-4 w-4" />

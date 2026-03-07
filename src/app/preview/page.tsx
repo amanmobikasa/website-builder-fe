@@ -12,29 +12,39 @@ export default function PreviewPage() {
     const [pageTitle, setPageTitle] = useState("Preview");
 
     useEffect(() => {
-        try {
-            const raw = sessionStorage.getItem("puck-preview-data");
-            const title = sessionStorage.getItem("puck-preview-title");
-            const themeCSS = sessionStorage.getItem("puck-preview-theme");
-            if (raw) {
-                setPageData(JSON.parse(raw));
-            }
-            if (title) {
-                setPageTitle(title);
-            }
-            // Inject selected theme CSS into the preview page
-            if (themeCSS && themeCSS.trim()) {
-                let el = document.getElementById("puck-theme-override") as HTMLStyleElement | null;
-                if (!el) {
-                    el = document.createElement("style");
-                    el.id = "puck-theme-override";
-                    document.head.appendChild(el);
+        const loadPreviewData = () => {
+            try {
+                const raw = localStorage.getItem("puck-preview-data");
+                const title = localStorage.getItem("puck-preview-title");
+                const themeCSS = localStorage.getItem("puck-preview-theme");
+                if (raw) {
+                    setPageData(JSON.parse(raw));
                 }
-                el.textContent = themeCSS;
+                if (title) {
+                    setPageTitle(title);
+                }
+                // Inject selected theme CSS into the preview page
+                if (themeCSS && themeCSS.trim()) {
+                    let el = document.getElementById("puck-theme-override") as HTMLStyleElement | null;
+                    if (!el) {
+                        el = document.createElement("style");
+                        el.id = "puck-theme-override";
+                        document.head.appendChild(el);
+                    }
+                    el.textContent = themeCSS;
+                } else {
+                    const el = document.getElementById("puck-theme-override");
+                    if (el) el.textContent = "";
+                }
+            } catch (err) {
+                console.error("Failed to load preview data:", err);
             }
-        } catch (err) {
-            console.error("Failed to load preview data:", err);
-        }
+        };
+
+        loadPreviewData();
+
+        window.addEventListener("storage", loadPreviewData);
+        return () => window.removeEventListener("storage", loadPreviewData);
     }, []);
 
     if (!pageData) {

@@ -122,28 +122,27 @@ const Pricing4 = ({
             </div>
           </div>
           <div className="flex w-full flex-col items-stretch gap-6 md:flex-row">
-            {plans.map((plan) => (
+            {Array.isArray(plans) && plans.map((plan) => (
               <div
-                key={plan.name}
-                className={`flex w-full flex-col rounded-lg border p-6 text-left ${
-                  plan.isPopular ? "bg-muted" : ""
-                }`}
+                key={plan?.name}
+                className={`flex w-full flex-col rounded-lg border p-6 text-left ${plan?.isPopular ? "bg-muted" : ""
+                  }`}
               >
                 <Badge className="mb-8 block w-fit uppercase">
-                  {plan.badge}
+                  {plan?.badge}
                 </Badge>
                 <span className="text-4xl font-medium">
-                  {isAnnually ? plan.yearlyPrice : plan.monthlyPrice}
+                  {isAnnually ? plan?.yearlyPrice : plan?.monthlyPrice}
                 </span>
                 <p
-                  className={`text-muted-foreground ${plan.monthlyPrice === "$0" ? "invisible" : ""}`}
+                  className={`text-muted-foreground ${plan?.monthlyPrice === "$0" ? "invisible" : ""}`}
                 >
                   {isAnnually ? "Per year" : "Per month"}
                 </p>
                 <Separator className="my-6" />
                 <div className="flex h-full flex-col justify-between gap-20">
                   <ul className="text-muted-foreground space-y-4">
-                    {plan.features.map((feature, featureIndex) => (
+                    {Array.isArray(plan?.features) && plan.features.map((feature, featureIndex) => (
                       <li
                         key={featureIndex}
                         className="flex items-center gap-2"
@@ -153,7 +152,7 @@ const Pricing4 = ({
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full">{plan.buttonText}</Button>
+                  <Button className="w-full">{plan?.buttonText}</Button>
                 </div>
               </div>
             ))}

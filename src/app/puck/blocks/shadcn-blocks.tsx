@@ -68,41 +68,88 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "mainImage": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "src": { "type": "text" },
+          "alt": { "type": "text" }
+        }
       },
       "secondaryImage": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "src": { "type": "text" },
+          "alt": { "type": "text" }
+        }
       },
       "breakout": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "src": { "type": "text" },
+          "alt": { "type": "text" },
+          "title": { "type": "text" },
+          "description": { "type": "textarea" },
+          "buttonText": { "type": "text" },
+          "buttonUrl": { "type": "text" }
+        }
       },
       "companiesTitle": {
         "type": "text"
       },
       "companies": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "src": { "type": "text" },
+          "alt": { "type": "text" }
+        }
       },
       "achievementsTitle": {
         "type": "text"
       },
       "achievementsDescription": {
-        "type": "text"
+        "type": "textarea"
       },
       "achievements": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "label": { "type": "text" },
+          "value": { "type": "text" }
+        }
       }
     },
     defaultProps: {
-      "title": "title text",
-      "description": "description text",
-      "mainImage": "https://shadcnblocks.com/placeholder-1.svg",
-      "secondaryImage": "https://shadcnblocks.com/placeholder-1.svg",
-      "breakout": "breakout text",
-      "companiesTitle": "companiesTitle text",
-      "companies": "companies text",
-      "achievementsTitle": "achievementsTitle text",
-      "achievementsDescription": "achievementsDescription text",
-      "achievements": "achievements text"
+      "title": "About Us",
+      "description": "Shadcnblocks is a passionate team dedicated to creating innovative solutions that empower businesses to thrive in the digital age.",
+      "mainImage": {
+        "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+        "alt": "placeholder"
+      },
+      "secondaryImage": {
+        "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+        "alt": "placeholder"
+      },
+      "breakout": {
+        "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
+        "alt": "logo",
+        "title": "Hundreds of blocks at Shadcnblocks.com",
+        "description": "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
+        "buttonText": "Discover more",
+        "buttonUrl": "https://shadcnblocks.com"
+      },
+      "companiesTitle": "Valued by clients worldwide",
+      "companies": [
+        { "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-1.svg", "alt": "Arc" },
+        { "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg", "alt": "Descript" },
+        { "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg", "alt": "Mercury" },
+        { "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-4.svg", "alt": "Ramp" }
+      ],
+      "achievementsTitle": "Our Achievements in Numbers",
+      "achievementsDescription": "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
+      "achievements": [
+        { "label": "Companies Supported", "value": "300+" },
+        { "label": "Projects Finalized", "value": "800+" },
+        { "label": "Happy Customers", "value": "99%" },
+        { "label": "Recognized Awards", "value": "10+" }
+      ]
     },
     render: (props) => <About3 {...props} />
   },
@@ -604,14 +651,28 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
       "features": {
         "type": "array",
         "arrayFields": {
-          "title": {
-            "type": "text"
-          }
+          "id": { "type": "number" },
+          "title": { "type": "text" },
+          "image": { "type": "text" },
+          "description": { "type": "text" }
         }
       }
     },
     defaultProps: {
-      "features": []
+      "features": [
+        {
+          id: 1,
+          title: "Ready-to-Use UI Blocks",
+          image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+          description: "Browse through our extensive collection of pre-built UI blocks designed with shadcn/ui. Each block is carefully crafted to be responsive, accessible, and easily customizable. Simply copy and paste the code into your project.",
+        },
+        {
+          id: 2,
+          title: "Tailwind CSS & TypeScript",
+          image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+          description: "Built with Tailwind CSS for rapid styling and TypeScript for type safety. Our blocks leverage the full power of Tailwind's utility classes while maintaining clean, type-safe code that integrates seamlessly with your Next.js projects.",
+        }
+      ]
     },
     render: (props) => <Feature197 {...props} />
   },
@@ -656,7 +717,11 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "features": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "heading": { "type": "text" },
+          "description": { "type": "text" }
+        }
       },
       "buttonText": {
         "type": "text"
@@ -667,7 +732,6 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
     },
     defaultProps: {
       "title": "title text",
-      "features": "",
       "buttonText": "buttonText text",
       "buttonUrl": "buttonUrl text"
     },
@@ -680,14 +744,48 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
       "features": {
         "type": "array",
         "arrayFields": {
-          "title": {
-            "type": "text"
+          "id": { "type": "text" },
+          "heading": { "type": "text" },
+          "description": { "type": "textarea" },
+          "image": { "type": "text" },
+          "url": { "type": "text" },
+          "isDefault": {
+            "type": "radio",
+            "options": [
+              { "label": "Yes", "value": true },
+              { "label": "No", "value": false }
+            ]
           }
         }
       }
     },
     defaultProps: {
-      "features": []
+      "features": [
+        {
+          "id": "feature-1",
+          "heading": "Research",
+          "description": "Discover the powerful features that make our platform stand out from the rest.",
+          "image": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
+          "url": "https://shadcnblocks.com",
+          "isDefault": true
+        },
+        {
+          "id": "feature-2",
+          "heading": "Refine",
+          "description": "Built with the latest technology and designed for maximum productivity.",
+          "image": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
+          "url": "https://shadcnblocks.com",
+          "isDefault": false
+        },
+        {
+          "id": "feature-3",
+          "heading": "Build",
+          "description": "Create amazing experiences with our comprehensive toolkit and resources.",
+          "image": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
+          "url": "https://shadcnblocks.com",
+          "isDefault": false
+        }
+      ]
     },
     render: (props) => <Feature51 {...props} />
   },
@@ -708,15 +806,21 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "features": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "id": { "type": "text" },
+          "heading": { "type": "text" },
+          "description": { "type": "text" },
+          "image": { "type": "text" },
+          "url": { "type": "text" }
+        }
       }
     },
     defaultProps: {
       "title": "title text",
       "description": "description text",
       "buttonUrl": "buttonUrl text",
-      "buttonText": "buttonText text",
-      "features": ""
+      "buttonText": "buttonText text"
     },
     render: (props) => <Feature72 {...props} />
   },
@@ -737,15 +841,21 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "features": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "id": { "type": "text" },
+          "heading": { "type": "text" },
+          "description": { "type": "text" },
+          "image": { "type": "text" },
+          "url": { "type": "text" }
+        }
       }
     },
     defaultProps: {
       "title": "title text",
       "description": "description text",
       "buttonUrl": "buttonUrl text",
-      "buttonText": "buttonText text",
-      "features": ""
+      "buttonText": "buttonText text"
     },
     render: (props) => <Feature73 {...props} />
   },
@@ -754,27 +864,71 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
     label: "Footer2",
     fields: {
       "logo": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "url": { "type": "text" },
+          "src": { "type": "text" },
+          "alt": { "type": "text" },
+          "title": { "type": "text" }
+        }
       },
       "tagline": {
         "type": "text"
       },
       "menuItems": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "title": { "type": "text" },
+          "links": {
+            "type": "array",
+            "arrayFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          }
+        }
       },
       "copyright": {
         "type": "text"
       },
       "bottomLinks": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "text": { "type": "text" },
+          "url": { "type": "text" }
+        }
       }
     },
     defaultProps: {
-      "logo": "https://shadcnblocks.com/placeholder-1.svg",
-      "tagline": "tagline text",
-      "menuItems": "",
-      "copyright": "copyright text",
-      "bottomLinks": "https://shadcnblocks.com/placeholder-1.svg"
+      "logo": {
+        "src": "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/block-1.svg",
+        "alt": "blocks for shadcn/ui",
+        "title": "Shadcnblocks.com",
+        "url": "https://www.shadcnblocks.com"
+      },
+      "tagline": "Components made easy.",
+      "menuItems": [
+        {
+          "title": "Product",
+          "links": [
+            { "text": "Overview", "url": "#" },
+            { "text": "Pricing", "url": "#" },
+            { "text": "Features", "url": "#" }
+          ]
+        },
+        {
+          "title": "Company",
+          "links": [
+            { "text": "About", "url": "#" },
+            { "text": "Contact", "url": "#" }
+          ]
+        }
+      ],
+      "copyright": "© 2024 Shadcnblocks.com. All rights reserved.",
+      "bottomLinks": [
+        { "text": "Terms and Conditions", "url": "#" },
+        { "text": "Privacy Policy", "url": "#" }
+      ]
     },
     render: (props) => <Footer2 {...props} />
   },
@@ -789,13 +943,19 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "items": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "id": { "type": "text" },
+          "title": { "type": "text" },
+          "summary": { "type": "text" },
+          "url": { "type": "text" },
+          "image": { "type": "text" }
+        }
       }
     },
     defaultProps: {
       "heading": "heading text",
-      "demoUrl": "demoUrl text",
-      "items": ""
+      "demoUrl": "demoUrl text"
     },
     render: (props) => <Gallery6 {...props} />
   },
@@ -813,18 +973,36 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "buttons": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "primary": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          },
+          "secondary": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          }
+        }
       },
       "image": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "src": { "type": "text" },
+          "alt": { "type": "text" }
+        }
       }
     },
     defaultProps: {
       "badge": "badge text",
       "heading": "heading text",
-      "description": "description text",
-      "buttons": "https://shadcnblocks.com/placeholder-1.svg",
-      "image": "https://shadcnblocks.com/placeholder-1.svg"
+      "description": "description text"
     },
     render: (props) => <Hero1 {...props} />
   },
@@ -876,17 +1054,57 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "buttons": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "primary": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          },
+          "secondary": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          }
+        }
       },
       "reviews": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "count": { "type": "number" },
+          "rating": { "type": "number" },
+          "avatars": {
+            "type": "array",
+            "arrayFields": {
+              "src": { "type": "text" },
+              "alt": { "type": "text" }
+            }
+          }
+        }
       }
     },
     defaultProps: {
-      "heading": "heading text",
-      "description": "description text",
-      "buttons": "https://shadcnblocks.com/placeholder-1.svg",
-      "reviews": "reviews text"
+      "heading": "Blocks built with Shadcn & Tailwind",
+      "description": "Finely crafted components built with React, Tailwind and Shadcn UI.",
+      "buttons": {
+        "primary": { "text": "Sign Up", "url": "#" },
+        "secondary": { "text": "Get Started", "url": "#" }
+      },
+      "reviews": {
+        "count": 200,
+        "rating": 5.0,
+        "avatars": [
+          { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp", alt: "Avatar 1" },
+          { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-2.webp", alt: "Avatar 2" },
+          { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-3.webp", alt: "Avatar 3" },
+          { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-4.webp", alt: "Avatar 4" },
+          { src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-5.webp", alt: "Avatar 5" }
+        ]
+      }
     },
     render: (props) => <Hero3 {...props} />
   },
@@ -907,15 +1125,36 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "features": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "title": {
+            "type": "text"
+          },
+          "description": {
+            "type": "text"
+          }
+        }
       }
     },
     defaultProps: {
-      "badge": "badge text",
-      "heading": "heading text",
+      "badge": "shadcnblocks.com",
+      "heading": "Blocks built with Shadcn & Tailwind",
       "imageSrc": "https://shadcnblocks.com/placeholder-1.svg",
-      "imageAlt": "https://shadcnblocks.com/placeholder-1.svg",
-      "features": ""
+      "imageAlt": "placeholder",
+      "features": [
+        {
+          title: "Flexible Support",
+          description: "Benefit from around-the-clock assistance to keep your business running smoothly."
+        },
+        {
+          title: "Collaborative Tools",
+          description: "Enhance teamwork with tools designed to simplify project management and communication."
+        },
+        {
+          title: "Lightning Fast Speed",
+          description: "Experience the fastest load times with our high performance servers."
+        }
+      ]
     },
     render: (props) => <Hero45 {...props} />
   },
@@ -1059,16 +1298,46 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "menu": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "title": { "type": "text" },
+          "url": { "type": "text" },
+          "description": { "type": "text" }
+        }
       },
       "auth": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "login": {
+            "type": "object",
+            "objectFields": {
+              "title": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          },
+          "signup": {
+            "type": "object",
+            "objectFields": {
+              "title": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          }
+        }
       }
     },
     defaultProps: {
       "logo": "https://shadcnblocks.com/placeholder-1.svg",
-      "menu": "",
-      "auth": "https://shadcnblocks.com/placeholder-1.svg"
+      "menu": [
+        { title: "Home", url: "#" },
+        { title: "Products", url: "#" },
+        { title: "Resources", url: "#" },
+        { title: "Pricing", url: "#" },
+        { title: "Blog", url: "#" },
+      ],
+      "auth": {
+        "login": { title: "Login", url: "#" },
+        "signup": { title: "Sign up", url: "#" }
+      }
     },
     render: (props) => <Navbar1 {...props} />
   },

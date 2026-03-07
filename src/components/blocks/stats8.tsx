@@ -59,10 +59,10 @@ const Stats8 = ({
           </a>
         </div>
         <div className="mt-14 grid gap-x-5 gap-y-8 md:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat) => (
-            <div key={stat.id} className="flex flex-col gap-5">
-              <div className="text-6xl font-bold">{stat.value}</div>
-              <p>{stat.label}</p>
+          {Array.isArray(stats) && stats.map((stat) => (
+            <div key={stat?.id} className="flex flex-col gap-5">
+              <div className="text-6xl font-bold">{stat?.value}</div>
+              <p>{stat?.label}</p>
             </div>
           ))}
         </div>

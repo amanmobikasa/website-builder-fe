@@ -101,30 +101,30 @@ const About3 = ({
         </div>
         <div className="grid gap-7 lg:grid-cols-3">
           <img
-            src={mainImage.src}
-            alt={mainImage.alt}
+            src={mainImage?.src}
+            alt={mainImage?.alt}
             className="size-full max-h-[620px] rounded-xl object-cover lg:col-span-2"
           />
           <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
             <div className="bg-muted flex flex-col justify-between gap-6 rounded-xl p-7 md:w-1/2 lg:w-auto">
               <img
-                src={breakout.src}
-                alt={breakout.alt}
+                src={breakout?.src}
+                alt={breakout?.alt}
                 className="mr-auto h-12"
               />
               <div>
-                <p className="mb-2 text-lg font-semibold">{breakout.title}</p>
-                <p className="text-muted-foreground">{breakout.description}</p>
+                <p className="mb-2 text-lg font-semibold">{breakout?.title}</p>
+                <p className="text-muted-foreground">{breakout?.description}</p>
               </div>
               <Button variant="outline" className="mr-auto" asChild>
-                <a href={breakout.buttonUrl} target="_blank">
-                  {breakout.buttonText}
+                <a href={breakout?.buttonUrl || "#"} target="_blank">
+                  {breakout?.buttonText}
                 </a>
               </Button>
             </div>
             <img
-              src={secondaryImage.src}
-              alt={secondaryImage.alt}
+              src={secondaryImage?.src}
+              alt={secondaryImage?.alt}
               className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto"
             />
           </div>
@@ -132,11 +132,11 @@ const About3 = ({
         <div className="py-32">
           <p className="text-center">{companiesTitle} </p>
           <div className="mt-8 flex flex-wrap justify-center gap-8">
-            {companies.map((company, idx) => (
-              <div className="flex items-center gap-3" key={company.src + idx}>
+            {Array.isArray(companies) && companies.map((company, idx) => (
+              <div className="flex items-center gap-3" key={company?.src + idx}>
                 <img
-                  src={company.src}
-                  alt={company.alt}
+                  src={company?.src}
+                  alt={company?.alt}
                   className="h-6 w-auto md:h-8"
                 />
               </div>
@@ -151,11 +151,11 @@ const About3 = ({
             </p>
           </div>
           <div className="mt-10 flex flex-wrap justify-between gap-10 text-center">
-            {achievements.map((item, idx) => (
-              <div className="flex flex-col gap-4" key={item.label + idx}>
-                <p>{item.label}</p>
+            {Array.isArray(achievements) && achievements.map((item, idx) => (
+              <div className="flex flex-col gap-4" key={item?.label + idx}>
+                <p>{item?.label}</p>
                 <span className="text-4xl font-semibold md:text-5xl">
-                  {item.value}
+                  {item?.value}
                 </span>
               </div>
             ))}
