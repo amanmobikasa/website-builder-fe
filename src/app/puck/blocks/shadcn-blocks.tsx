@@ -1198,10 +1198,25 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "button": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "text": { "type": "text" },
+          "url": { "type": "text" }
+        }
       },
       "reviews": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "count": { "type": "number" },
+          "rating": { "type": "number" },
+          "avatars": {
+            "type": "array",
+            "arrayFields": {
+              "src": { "type": "text" },
+              "alt": { "type": "text" }
+            }
+          }
+        }
       }
     },
     defaultProps: {
@@ -1227,7 +1242,13 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "items": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "title": { "type": "text" },
+          "category": { "type": "text" },
+          "description": { "type": "textarea" },
+          "link": { "type": "text" }
+        }
       }
     },
     defaultProps: {
@@ -1485,10 +1506,19 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "link": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "text": { "type": "text" },
+          "url": { "type": "text" }
+        }
       },
       "stats": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "id": { "type": "text" },
+          "value": { "type": "text" },
+          "label": { "type": "text" }
+        }
       }
     },
     defaultProps: {
@@ -1513,7 +1543,13 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "members": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "id": { "type": "text" },
+          "name": { "type": "text" },
+          "role": { "type": "text" },
+          "avatar": { "type": "text" }
+        }
       }
     },
     defaultProps: {
