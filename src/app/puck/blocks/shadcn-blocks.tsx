@@ -1172,10 +1172,30 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "image": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "src": { "type": "text" },
+          "alt": { "type": "text" }
+        }
       },
       "buttons": {
-        "type": "text"
+        "type": "object",
+        "objectFields": {
+          "primary": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          },
+          "secondary": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          }
+        }
       }
     },
     defaultProps: {
@@ -1301,7 +1321,12 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "logos": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "name": { "type": "text" },
+          "logo": { "type": "text" },
+          "className": { "type": "text" }
+        }
       }
     },
     defaultProps: {
@@ -1373,7 +1398,27 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "plans": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "id": { "type": "text" },
+          "name": { "type": "text" },
+          "description": { "type": "text" },
+          "monthlyPrice": { "type": "text" },
+          "yearlyPrice": { "type": "text" },
+          "features": {
+            "type": "array",
+            "arrayFields": {
+              "text": { "type": "text" }
+            }
+          },
+          "button": {
+            "type": "object",
+            "objectFields": {
+              "text": { "type": "text" },
+              "url": { "type": "text" }
+            }
+          }
+        }
       }
     },
     defaultProps: {
@@ -1394,7 +1439,14 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "plans": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "name": { "type": "text" },
+          "badge": { "type": "text" },
+          "monthlyPrice": { "type": "text" },
+          "yearlyPrice": { "type": "text" },
+          "buttonText": { "type": "text" }
+        }
       },
       "className": {
         "type": "text"
@@ -1425,7 +1477,10 @@ export const shadcnBlocksConfig: Record<string, ComponentConfig<any>> = {
         "type": "text"
       },
       "features": {
-        "type": "text"
+        "type": "array",
+        "arrayFields": {
+          "group": { "type": "text" }
+        }
       },
       "buttonText": {
         "type": "text"
