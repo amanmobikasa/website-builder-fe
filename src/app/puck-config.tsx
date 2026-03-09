@@ -53,6 +53,15 @@ import { shadcnBlocksConfig } from "./puck/blocks/shadcn-blocks";
 type Props = Record<string, any>;
 
 export const puckConfig: Config = {
+    root: {
+        render: ({ children }: { children: React.ReactNode }) => {
+            return (
+                <div className="container mx-auto px-4 max-w-7xl">
+                    {children}
+                </div>
+            );
+        }
+    },
     categories: {
         // Original categories
         layout: {
